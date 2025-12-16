@@ -1,24 +1,456 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ko7-5h-Aco">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Tab Bar Controller-->
+        <scene sceneID="ccF-l3-TMY">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tabBarController id="Ko7-5h-Aco" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Mc3-Dm-u6g">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" name="TabBarBackground"/>
+                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" name="AccentBlue"/>
+                        <tabBarAppearance key="standardAppearance"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="kiw-5J-En9" kind="relationship" relationship="viewControllers" id="mNd-Dj-S7Q"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pzI-QF-MoW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-714" y="-186"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="LSm-2e-xmq">
+            <objects>
+                <viewController id="kiw-5J-En9" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iO2-8r-FIA">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qJi-5T-S4C" userLabel="Header">
+                                <rect key="frame" x="0.0" y="118" width="393" height="56"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="JjR-pr-Sbi">
+                                        <rect key="frame" x="16" y="8" width="361" height="40"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yd8-tQ-C58">
+                                                <rect key="frame" x="0.0" y="0.0" width="32" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="32" id="nK2-li-SCO"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Casino" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LqR-kc-yLu">
+                                                <rect key="frame" x="44" y="0.0" width="56" height="40"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" systemColor="systemCyanColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" horizontalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="KOK-mQ-Aoa">
+                                                <rect key="frame" x="112" y="0.0" width="162" height="40"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L95-dA-4UD">
+                                                <rect key="frame" x="286" y="0.0" width="75" height="40"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="l2D-25-cVg"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="CardBackground"/>
+                                <constraints>
+                                    <constraint firstItem="JjR-pr-Sbi" firstAttribute="top" secondItem="qJi-5T-S4C" secondAttribute="topMargin" id="1MT-Du-H44"/>
+                                    <constraint firstItem="JjR-pr-Sbi" firstAttribute="centerY" secondItem="qJi-5T-S4C" secondAttribute="centerY" id="7vs-WK-IsH"/>
+                                    <constraint firstAttribute="trailing" secondItem="JjR-pr-Sbi" secondAttribute="trailing" constant="16" id="bxM-iD-vEe"/>
+                                    <constraint firstItem="JjR-pr-Sbi" firstAttribute="leading" secondItem="qJi-5T-S4C" secondAttribute="leading" constant="16" id="fCu-1u-ElB"/>
+                                </constraints>
+                            </view>
+                            <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zcg-ug-JJz">
+                                <rect key="frame" x="0.0" y="174" width="393" height="595"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwg-gJ-McN" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="458"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="kpW-wn-abM" userLabel="Main Stack">
+                                                <rect key="frame" x="16" y="16" width="361" height="672"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d1E-YE-GWo" userLabel="Banner" customClass="CardView" customModule="Casino" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="361" height="180"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="180" id="8qN-up-1HX"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                                                <color key="value" red="0.62400359137363581" green="0.22605762288545905" blue="0.80038240671157834" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                                                <color key="value" name="AccentBlue"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="20"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="rt3-Tc-8od" userLabel="Row 1">
+                                                        <rect key="frame" x="0.0" y="204" width="361" height="160"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZJ5-RB-97r" customClass="CardView" customModule="Casino" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="160"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tqy-lq-bAW">
+                                                                        <rect key="frame" x="65" y="8" width="42" height="21"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zS3-br-QIR">
+                                                                        <rect key="frame" x="39" y="62" width="95" height="35"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="Play Now"/>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" name="CardBackground"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="160" id="Xp0-xV-l35"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                        <color key="value" name="AccentBlue"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="20"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KaV-Js-BjB" customClass="CardView" customModule="Casino" customModuleProvider="target">
+                                                                <rect key="frame" x="188.66666666666663" y="0.0" width="172.33333333333337" height="160"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCR-C9-XdY">
+                                                                        <rect key="frame" x="65" y="18" width="42" height="21"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYk-x0-PLt">
+                                                                        <rect key="frame" x="38" y="75" width="95" height="35"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="Play Now"/>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" name="CardBackground"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="160" id="ebp-md-My8"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                        <color key="value" systemColor="systemCyanColor"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="20"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="oHH-TB-31v" userLabel="Row 2">
+                                                        <rect key="frame" x="0.0" y="388" width="361" height="160"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uTX-Qm-bXj" customClass="CardView" customModule="Casino" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="160"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3h-dy-y1R">
+                                                                        <rect key="frame" x="65" y="8" width="42" height="21"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="no9-Su-QE5">
+                                                                        <rect key="frame" x="39" y="62" width="95" height="35"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="Play Now"/>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" name="CardBackground"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="160" id="ewf-nt-jKJ"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                        <color key="value" name="AccentBlue"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="20"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQ9-Kc-oVd" customClass="CardView" customModule="Casino" customModuleProvider="target">
+                                                                <rect key="frame" x="188.66666666666663" y="0.0" width="172.33333333333337" height="160"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LaK-Lr-RrI">
+                                                                        <rect key="frame" x="65" y="18" width="42" height="21"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VCT-aU-MGt">
+                                                                        <rect key="frame" x="38" y="75" width="95" height="35"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <state key="normal" title="Button"/>
+                                                                        <buttonConfiguration key="configuration" style="plain" title="Play Now"/>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" name="CardBackground"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="160" id="yNM-rG-GQz"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                        <color key="value" systemColor="systemCyanColor"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="20"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="CwQ-9y-KuT">
+                                                        <rect key="frame" x="0.0" y="572" width="361" height="100"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2D7-K7-fqA" customClass="CardView" customModule="Casino" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="112.33333333333333" height="100"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fuI-rE-IZ5">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="112.33333333333333" height="100"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T96-Pb-xtx" userLabel="Num">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="112.33333333333333" height="85.666666666666671"/>
+                                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                                                <color key="textColor" name="AccentBlue"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Games Played" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AvO-VX-hQ3" userLabel="GamesPlayed">
+                                                                                <rect key="frame" x="0.0" y="85.666666666666629" width="112.33333333333333" height="14.333333333333329"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstItem="T96-Pb-xtx" firstAttribute="centerX" secondItem="fuI-rE-IZ5" secondAttribute="centerX" id="HD6-2t-7Ef"/>
+                                                                        </constraints>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" name="CardBackground"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="fuI-rE-IZ5" secondAttribute="trailing" id="DaX-ZF-Mbn"/>
+                                                                    <constraint firstItem="fuI-rE-IZ5" firstAttribute="leading" secondItem="2D7-K7-fqA" secondAttribute="leading" id="RVJ-Zx-1aN"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="fuI-rE-IZ5" secondAttribute="bottom" id="mCh-59-qQE"/>
+                                                                    <constraint firstItem="fuI-rE-IZ5" firstAttribute="top" secondItem="2D7-K7-fqA" secondAttribute="top" id="vSo-xt-UKl"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="12"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                        <color key="value" red="0.62400359139999995" green="0.2260576229" blue="0.80038240670000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PoF-HW-ByH" customClass="CardView" customModule="Casino" customModuleProvider="target">
+                                                                <rect key="frame" x="124.33333333333334" y="0.0" width="112.33333333333334" height="100"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Isx-f7-4s0">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="112.33333333333333" height="100"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEd-eU-FZ7" userLabel="Num">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="112.33333333333333" height="85.666666666666671"/>
+                                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                                                <color key="textColor" systemColor="systemGreenColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebj-AA-cQT">
+                                                                                <rect key="frame" x="0.0" y="85.666666666666629" width="112.33333333333333" height="14.333333333333329"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstItem="LEd-eU-FZ7" firstAttribute="centerX" secondItem="Isx-f7-4s0" secondAttribute="centerX" id="9nv-IW-U71"/>
+                                                                        </constraints>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" name="CardBackground"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="bottom" secondItem="Isx-f7-4s0" secondAttribute="bottom" id="5Lb-fJ-o5S"/>
+                                                                    <constraint firstItem="Isx-f7-4s0" firstAttribute="leading" secondItem="PoF-HW-ByH" secondAttribute="leading" id="Rr2-3R-BPW"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="Isx-f7-4s0" secondAttribute="trailing" id="rFF-dd-sej"/>
+                                                                    <constraint firstItem="Isx-f7-4s0" firstAttribute="top" secondItem="PoF-HW-ByH" secondAttribute="top" id="xKL-1a-voZ"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="12"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                        <color key="value" red="0.62400359139999995" green="0.2260576229" blue="0.80038240670000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wSm-fM-hZA" customClass="CardView" customModule="Casino" customModuleProvider="target">
+                                                                <rect key="frame" x="248.66666666666671" y="0.0" width="112.33333333333334" height="100"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Uag-hP-ae7">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="112.33333333333333" height="100"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pya-oe-bp1" userLabel="Num">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="112.33333333333333" height="85.666666666666671"/>
+                                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                                                <color key="textColor" red="0.62400359139999995" green="0.2260576229" blue="0.80038240670000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Win Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWR-Kr-SxE" userLabel="WinRate">
+                                                                                <rect key="frame" x="0.0" y="85.666666666666629" width="112.33333333333333" height="14.333333333333329"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstItem="pya-oe-bp1" firstAttribute="centerX" secondItem="Uag-hP-ae7" secondAttribute="centerX" id="KKd-gC-8vR"/>
+                                                                        </constraints>
+                                                                    </stackView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" name="CardBackground"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="Uag-hP-ae7" secondAttribute="trailing" id="1E5-Ay-1RQ"/>
+                                                                    <constraint firstItem="Uag-hP-ae7" firstAttribute="leading" secondItem="wSm-fM-hZA" secondAttribute="leading" id="Wt5-f9-cAI"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="Uag-hP-ae7" secondAttribute="bottom" id="coI-G7-oab"/>
+                                                                    <constraint firstItem="Uag-hP-ae7" firstAttribute="top" secondItem="wSm-fM-hZA" secondAttribute="top" id="iCD-Cz-c6h"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="12"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                        <color key="value" red="0.62400359139999995" green="0.2260576229" blue="0.80038240670000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="100" id="obZ-eL-SFc"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="kpW-wn-abM" firstAttribute="top" secondItem="gwg-gJ-McN" secondAttribute="top" constant="16" id="EBm-La-KNq"/>
+                                            <constraint firstAttribute="trailing" secondItem="kpW-wn-abM" secondAttribute="trailing" constant="16" id="GhO-gW-2eF"/>
+                                            <constraint firstItem="kpW-wn-abM" firstAttribute="bottom" secondItem="gwg-gJ-McN" secondAttribute="bottom" constant="230" id="IlO-C5-N7H"/>
+                                            <constraint firstItem="kpW-wn-abM" firstAttribute="leading" secondItem="gwg-gJ-McN" secondAttribute="leading" constant="16" id="z5x-Tz-peK"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="gwg-gJ-McN" firstAttribute="bottom" secondItem="8KG-qJ-u46" secondAttribute="bottom" id="63u-Qv-0yv"/>
+                                    <constraint firstItem="gwg-gJ-McN" firstAttribute="width" secondItem="b48-FW-1XV" secondAttribute="width" id="Cnw-b1-B3c"/>
+                                    <constraint firstItem="gwg-gJ-McN" firstAttribute="leading" secondItem="8KG-qJ-u46" secondAttribute="leading" id="G8b-qG-Owp"/>
+                                    <constraint firstItem="gwg-gJ-McN" firstAttribute="top" secondItem="8KG-qJ-u46" secondAttribute="top" id="PLc-jW-Cjd"/>
+                                    <constraint firstItem="gwg-gJ-McN" firstAttribute="trailing" secondItem="8KG-qJ-u46" secondAttribute="trailing" id="x4M-G9-Q9R"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="8KG-qJ-u46"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="b48-FW-1XV"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JfR-cF-QpE"/>
+                        <color key="backgroundColor" name="AppBackground"/>
+                        <constraints>
+                            <constraint firstItem="qJi-5T-S4C" firstAttribute="trailing" secondItem="JfR-cF-QpE" secondAttribute="trailing" id="65s-5k-FcL"/>
+                            <constraint firstItem="zcg-ug-JJz" firstAttribute="top" secondItem="qJi-5T-S4C" secondAttribute="bottom" id="UTK-Mn-DV2"/>
+                            <constraint firstItem="zcg-ug-JJz" firstAttribute="trailing" secondItem="JfR-cF-QpE" secondAttribute="trailing" id="VWv-7C-xUJ"/>
+                            <constraint firstItem="zcg-ug-JJz" firstAttribute="leading" secondItem="JfR-cF-QpE" secondAttribute="leading" id="cOz-AJ-2SI"/>
+                            <constraint firstItem="qJi-5T-S4C" firstAttribute="leading" secondItem="JfR-cF-QpE" secondAttribute="leading" id="eyu-Oa-P6Y"/>
+                            <constraint firstItem="qJi-5T-S4C" firstAttribute="top" secondItem="JfR-cF-QpE" secondAttribute="top" id="ezS-xz-dWd"/>
+                            <constraint firstAttribute="bottom" secondItem="zcg-ug-JJz" secondAttribute="bottom" id="g0i-tR-qzT"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="FWp-wf-vzM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nx9-5o-pOV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="78.625954198473281" y="-187.32394366197184"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="house.fill" catalog="system" width="128" height="104"/>
+        <namedColor name="AccentBlue">
+            <color red="0.0" green="0.81960784313725488" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AppBackground">
+            <color red="0.054901960784313725" green="0.054901960784313725" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CardBackground">
+            <color red="0.10980392156862745" green="0.10980392156862745" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TabBarBackground">
+            <color red="0.082352941176470587" green="0.082352941176470587" blue="0.14509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.1960784314" green="0.67843137249999996" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

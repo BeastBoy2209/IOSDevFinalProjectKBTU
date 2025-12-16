@@ -16,6 +16,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.configureWithDefaultBackground() // Включает эффект блюра/стекла
+
+        // Убедись, что у тебя есть цвет "AppBackground" в Assets, или замени на .black
+        tabBarAppearance.backgroundColor = UIColor(named: "AppBackground")?.withAlphaComponent(0.8) ?? .black.withAlphaComponent(0.8)
+
+        // Убираем стандартную серую полоску-разделитель
+        tabBarAppearance.shadowColor = .clear
+
+        // Применяем настройки для всех состояний (обычное и при скролле)
+        UITabBar.appearance().standardAppearance = tabBarAppearance
+        if #available(iOS 15.0, *) {
+            UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+        }
+
+        // Задаем цвета иконок и текста
+        UITabBar.appearance().tintColor = UIColor(named: "AccentBlue") ?? .cyan // Активный цвет
+        UITabBar.appearance().unselectedItemTintColor = .gray // Неактивный цвет
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 
