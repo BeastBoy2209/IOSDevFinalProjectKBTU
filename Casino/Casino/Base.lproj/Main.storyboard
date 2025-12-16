@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -38,48 +39,87 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qJi-5T-S4C" userLabel="Header">
-                                <rect key="frame" x="0.0" y="118" width="393" height="56"/>
+                                <rect key="frame" x="0.0" y="118" width="393" height="64"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="JjR-pr-Sbi">
-                                        <rect key="frame" x="16" y="8" width="361" height="40"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="JjR-pr-Sbi">
+                                        <rect key="frame" x="16" y="0.0" width="361" height="64"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yd8-tQ-C58">
-                                                <rect key="frame" x="0.0" y="0.0" width="32" height="40"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yd8-tQ-C58">
+                                                <rect key="frame" x="0.0" y="9.3333333333333321" width="48" height="45.333333333333343"/>
+                                                <color key="tintColor" name="AccentBlue"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="32" id="nK2-li-SCO"/>
+                                                    <constraint firstAttribute="height" constant="48" id="Jeq-93-Xoz"/>
+                                                    <constraint firstAttribute="width" constant="48" id="XLT-7t-KdK"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Casino" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LqR-kc-yLu">
-                                                <rect key="frame" x="44" y="0.0" width="56" height="40"/>
+                                                <rect key="frame" x="60" y="22" width="56" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <color key="textColor" systemColor="systemCyanColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" horizontalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="KOK-mQ-Aoa">
-                                                <rect key="frame" x="112" y="0.0" width="162" height="40"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <view contentMode="scaleToFill" horizontalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="KOK-mQ-Aoa" customClass="CardView" customModule="Casino" customModuleProvider="target">
+                                                <rect key="frame" x="128" y="14" width="146" height="36"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8XT-yK-Ubp">
+                                                        <rect key="frame" x="8" y="0.0" width="126" height="36"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RMD-hp-bbW">
+                                                                <rect key="frame" x="0.0" y="-1.6666666666666679" width="20" height="39.333333333333343"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="20" id="MnD-jF-Nh0"/>
+                                                                    <constraint firstAttribute="width" constant="20" id="ZQC-Sy-Hgg"/>
+                                                                </constraints>
+                                                                <imageReference key="image" image="dot.square.fill" catalog="system" symbolScale="large"/>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EL-h7-RRJ">
+                                                                <rect key="frame" x="20" y="0.0" width="106" height="36"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" name="TabBarBackground"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="8XT-yK-Ubp" secondAttribute="bottom" id="3KD-tR-37a"/>
+                                                    <constraint firstItem="8XT-yK-Ubp" firstAttribute="top" secondItem="KOK-mQ-Aoa" secondAttribute="top" id="3w7-Xx-wIg"/>
+                                                    <constraint firstAttribute="height" constant="36" id="63a-oo-e1t"/>
+                                                    <constraint firstItem="8XT-yK-Ubp" firstAttribute="leading" secondItem="KOK-mQ-Aoa" secondAttribute="leading" constant="8" id="hXY-rp-NCf"/>
+                                                    <constraint firstAttribute="trailing" secondItem="8XT-yK-Ubp" secondAttribute="trailing" constant="12" id="vEN-vV-iEf"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="14"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.62400359139999995" green="0.2260576229" blue="0.80038240670000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L95-dA-4UD">
-                                                <rect key="frame" x="286" y="0.0" width="75" height="40"/>
+                                                <rect key="frame" x="286" y="15.000000000000004" width="75" height="34.333333333333343"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                             </button>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="l2D-25-cVg"/>
-                                        </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" name="CardBackground"/>
+                                <color key="backgroundColor" name="AppBackground"/>
                                 <constraints>
-                                    <constraint firstItem="JjR-pr-Sbi" firstAttribute="top" secondItem="qJi-5T-S4C" secondAttribute="topMargin" id="1MT-Du-H44"/>
-                                    <constraint firstItem="JjR-pr-Sbi" firstAttribute="centerY" secondItem="qJi-5T-S4C" secondAttribute="centerY" id="7vs-WK-IsH"/>
-                                    <constraint firstAttribute="trailing" secondItem="JjR-pr-Sbi" secondAttribute="trailing" constant="16" id="bxM-iD-vEe"/>
-                                    <constraint firstItem="JjR-pr-Sbi" firstAttribute="leading" secondItem="qJi-5T-S4C" secondAttribute="leading" constant="16" id="fCu-1u-ElB"/>
+                                    <constraint firstAttribute="height" constant="64" id="FEd-v4-gw0"/>
+                                    <constraint firstItem="JjR-pr-Sbi" firstAttribute="leading" secondItem="qJi-5T-S4C" secondAttribute="leading" constant="16" id="MSL-QQ-FRS"/>
+                                    <constraint firstAttribute="trailing" secondItem="JjR-pr-Sbi" secondAttribute="trailing" constant="16" id="XFP-op-zqo"/>
+                                    <constraint firstAttribute="bottom" secondItem="JjR-pr-Sbi" secondAttribute="bottom" id="ZSi-75-u8n"/>
+                                    <constraint firstItem="JjR-pr-Sbi" firstAttribute="top" secondItem="qJi-5T-S4C" secondAttribute="top" id="dAw-4r-Lag"/>
                                 </constraints>
                             </view>
                             <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zcg-ug-JJz">
-                                <rect key="frame" x="0.0" y="174" width="393" height="595"/>
+                                <rect key="frame" x="0.0" y="182" width="393" height="587"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gwg-gJ-McN" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="458"/>
@@ -413,13 +453,13 @@
                         <viewLayoutGuide key="safeArea" id="JfR-cF-QpE"/>
                         <color key="backgroundColor" name="AppBackground"/>
                         <constraints>
-                            <constraint firstItem="qJi-5T-S4C" firstAttribute="trailing" secondItem="JfR-cF-QpE" secondAttribute="trailing" id="65s-5k-FcL"/>
-                            <constraint firstItem="zcg-ug-JJz" firstAttribute="top" secondItem="qJi-5T-S4C" secondAttribute="bottom" id="UTK-Mn-DV2"/>
+                            <constraint firstItem="qJi-5T-S4C" firstAttribute="top" secondItem="JfR-cF-QpE" secondAttribute="top" id="7wX-rW-Z0u"/>
+                            <constraint firstItem="qJi-5T-S4C" firstAttribute="leading" secondItem="JfR-cF-QpE" secondAttribute="leading" id="VFt-XY-8Jh"/>
                             <constraint firstItem="zcg-ug-JJz" firstAttribute="trailing" secondItem="JfR-cF-QpE" secondAttribute="trailing" id="VWv-7C-xUJ"/>
                             <constraint firstItem="zcg-ug-JJz" firstAttribute="leading" secondItem="JfR-cF-QpE" secondAttribute="leading" id="cOz-AJ-2SI"/>
-                            <constraint firstItem="qJi-5T-S4C" firstAttribute="leading" secondItem="JfR-cF-QpE" secondAttribute="leading" id="eyu-Oa-P6Y"/>
-                            <constraint firstItem="qJi-5T-S4C" firstAttribute="top" secondItem="JfR-cF-QpE" secondAttribute="top" id="ezS-xz-dWd"/>
                             <constraint firstAttribute="bottom" secondItem="zcg-ug-JJz" secondAttribute="bottom" id="g0i-tR-qzT"/>
+                            <constraint firstItem="zcg-ug-JJz" firstAttribute="top" secondItem="qJi-5T-S4C" secondAttribute="bottom" id="l65-po-fpt"/>
+                            <constraint firstItem="qJi-5T-S4C" firstAttribute="trailing" secondItem="JfR-cF-QpE" secondAttribute="trailing" id="sIW-rG-Id7"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="FWp-wf-vzM"/>
@@ -430,6 +470,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="car" catalog="system" width="128" height="95"/>
+        <image name="dot.square.fill" catalog="system" width="128" height="114"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <namedColor name="AccentBlue">
             <color red="0.0" green="0.81960784313725488" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
