@@ -1132,6 +1132,7 @@
                                                                         </buttonConfiguration>
                                                                         <connections>
                                                                             <action selector="playNowTapped:" destination="BvD-pY-Man" eventType="touchUpInside" id="AuA-du-0i0"/>
+                                                                            <segue destination="0N0-OX-69o" kind="presentation" modalPresentationStyle="fullScreen" id="MDd-Py-bfc"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -2962,6 +2963,9 @@
             <point key="canvasLocation" x="1546" y="-187"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="MDd-Py-bfc"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="AppIcon" width="1024" height="1024"/>
         <image name="CrownAch" width="512" height="512"/>

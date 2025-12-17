@@ -29,12 +29,14 @@ class RouletteViewController: UIViewController {
     @IBOutlet weak var bettingStackView: UIStackView!
     @IBOutlet weak var spinButton: UIButton!
     
+    // Exit button (создается программно)
+    var exitButton: UIButton!
+    
     // --- 3. ПЕРЕМЕННЫЕ ИГРЫ ---
     let numbers = Array(0...36)
     let redNumbers: Set<Int> = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36]
     let totalItems = 10_000
     var currentIndex = 5_000
-    var balance = 1000
     
     enum BetType {
         case number(Int)
@@ -48,6 +50,9 @@ class RouletteViewController: UIViewController {
     // --- 4. ЖИЗНЕННЫЙ ЦИКЛ ---
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Создаем кнопку выхода
+        setupExitButton()
         
         // ВАЖНО: Сначала настраиваем констрейнты
         setupConstraints()
@@ -68,6 +73,29 @@ class RouletteViewController: UIViewController {
         DispatchQueue.main.async {
             self.scrollToIndex(self.currentIndex, animated: false)
         }
+    }
+    
+    // --- 5. СОЗДАНИЕ КНОПКИ ВЫХОДА ---
+    func setupExitButton() {
+        exitButton = UIButton(type: .system)
+        exitButton.setTitle("✕", for: .normal)
+        exitButton.setTitleColor(.neonRed, for: .normal)
+        exitButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 28)
+        exitButton.backgroundColor = UIColor.black.withAlphaComponent(0.7)
+        exitButton.layer.cornerRadius = 20
+        exitButton.layer.borderWidth = 2
+        exitButton.layer.borderColor = UIColor.neonRed.cgColor
+        exitButton.translatesAutoresizingMaskIntoConstraints = false
+        exitButton.addTarget(self, action: #selector(exitButtonTapped), for: .touchUpInside)
+        
+        view.addSubview(exitButton)
+        
+        NSLayoutConstraint.activate([
+            exitButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            exitButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            exitButton.widthAnchor.constraint(equalToConstant: 40),
+            exitButton.heightAnchor.constraint(equalToConstant: 40)
+        ])
     }
     
     // --- 6. ПРОГРАММНЫЕ КОНСТРЕЙНТЫ ---
@@ -184,6 +212,9 @@ class RouletteViewController: UIViewController {
         spinButton.setTitleColor(.neonBlue, for: .normal)
         spinButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
         addGlow(to: spinButton, color: .neonBlue)
+        
+        // Добавляем эффект свечения для кнопки выхода
+        addGlow(to: exitButton, color: .neonRed)
     }
     
     func addGlow(to view: UIView, color: UIColor) {
@@ -285,14 +316,14 @@ class RouletteViewController: UIViewController {
             resultLabel.textColor = .neonYellow
             return
         }
-        if balance < amount {
+        if UserManager.shared.balance < amount {
             resultLabel.text = "Insufficient funds!"
             resultLabel.textColor = .neonRed
             return
         }
         
-        balance -= amount
-        updateBalance()
+        // Вычитаем ставку из баланса
+        UserManager.shared.addCredits(amount: -amount, source: "Roulette Bet")
         resultLabel.text = "Spinning..."
         resultLabel.textColor = .white
         
@@ -322,7 +353,7 @@ class RouletteViewController: UIViewController {
     
     @objc func maxTapped(_ sender: UIButton) {
         animatePress(sender)
-        betAmountTextField.text = "\(balance)"
+        betAmountTextField.text = "\(UserManager.shared.balance)"
     }
     
     @objc func betNumberTapped(_ sender: UIButton) {
@@ -391,14 +422,16 @@ class RouletteViewController: UIViewController {
         }
         
         if didWin {
-            balance += prize
+            // Добавляем выигрыш к балансу
+            UserManager.shared.recordGameResult(gameName: "Roulette", didWin: true, delta: prize)
             resultLabel.text = "WIN! \(result) (+\(prize)$)"
             resultLabel.textColor = .neonGreen
         } else {
+            // Записываем проигрыш (delta = 0, так как ставка уже вычтена)
+            UserManager.shared.recordGameResult(gameName: "Roulette", didWin: false, delta: 0)
             resultLabel.text = "Lost. Result: \(result)"
             resultLabel.textColor = .neonRed
         }
-        updateBalance()
     }
     
     func scrollToIndex(_ idx: Int, animated: Bool) {
@@ -406,16 +439,35 @@ class RouletteViewController: UIViewController {
     }
     
     func updateBalance() {
-        balanceLabel.text = "BALANCE: \(balance)$"
+        balanceLabel.text = "BALANCE: \(UserManager.shared.balance)$"
+    }
+    
+    @objc func handleUserManagerUpdate(_ notification: Notification) {
+        updateBalance()
     }
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+    
+    @objc func exitButtonTapped() {
+        // Анимация нажатия
+        UIView.animate(withDuration: 0.1, animations: {
+            self.exitButton.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        }) { _ in
+            UIView.animate(withDuration: 0.1) {
+                self.exitButton.transform = .identity
+            }
+        }
+        
+        // Закрываем контроллер и возвращаемся назад
+        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
+    }
 }
 
 // --- 8. НАСТРОЙКА ЛЕНТЫ РУЛЕТКИ ---
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension RouletteViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return totalItems
