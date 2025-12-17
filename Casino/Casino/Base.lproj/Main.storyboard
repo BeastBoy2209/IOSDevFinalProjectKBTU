@@ -35,7 +35,7 @@
         <!--Home-->
         <scene sceneID="LSm-2e-xmq">
             <objects>
-                <viewController id="kiw-5J-En9" sceneMemberID="viewController">
+                <viewController id="kiw-5J-En9" customClass="HomeViewController" customModule="Casino" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iO2-8r-FIA">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,9 +61,52 @@
                                             </label>
                                             <view contentMode="scaleToFill" horizontalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="WoH-lO-6un" userLabel="Spacer">
                                                 <rect key="frame" x="128.33333333333334" y="0.0" width="108.66666666666666" height="32"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g80-m1-px4" customClass="CardView" customModule="Casino" customModuleProvider="target">
+                                                        <rect key="frame" x="10" y="0.0" width="88.666666666666671" height="32"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKp-T0-dGm">
+                                                                <rect key="frame" x="0.0" y="0.0" width="88.666666666666671" height="32"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="wKp-T0-dGm" secondAttribute="trailing" id="n71-i9-F2U"/>
+                                                            <constraint firstItem="wKp-T0-dGm" firstAttribute="leading" secondItem="g80-m1-px4" secondAttribute="leading" id="qaz-IX-Nmf"/>
+                                                            <constraint firstItem="wKp-T0-dGm" firstAttribute="top" secondItem="g80-m1-px4" secondAttribute="top" id="xzk-5b-t3E"/>
+                                                            <constraint firstAttribute="bottom" secondItem="wKp-T0-dGm" secondAttribute="bottom" id="zlY-ME-8s0"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="8"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" systemColor="systemIndigoColor"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                                                <color key="value" name="CardBackground"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                                                <color key="value" name="CardBackground"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="g80-m1-px4" secondAttribute="trailing" constant="10" id="OuY-Lq-Rl3"/>
+                                                    <constraint firstItem="g80-m1-px4" firstAttribute="leading" secondItem="WoH-lO-6un" secondAttribute="leading" constant="10" id="XIy-vR-wxU"/>
+                                                    <constraint firstItem="g80-m1-px4" firstAttribute="top" secondItem="WoH-lO-6un" secondAttribute="top" id="dgA-qk-es0"/>
+                                                    <constraint firstAttribute="bottom" secondItem="g80-m1-px4" secondAttribute="bottom" id="k3M-Mq-mhv"/>
+                                                </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56A-wO-Nm2" userLabel="Nott">
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56A-wO-Nm2" userLabel="Nott">
                                                 <rect key="frame" x="249" y="0.0" width="49" height="32"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="bell" catalog="system"/>
                                             </button>
@@ -140,6 +183,9 @@
                                                                                 <state key="normal" title="Claim Now">
                                                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 </state>
+                                                                                <connections>
+                                                                                    <action selector="bannerButtonTapped:" destination="kiw-5J-En9" eventType="touchUpInside" id="v9U-Tm-zdu"/>
+                                                                                </connections>
                                                                             </button>
                                                                         </subviews>
                                                                     </stackView>
@@ -233,7 +279,7 @@
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIQ-RF-PE4">
+                                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIQ-RF-PE4">
                                                                         <rect key="frame" x="10" y="164.66666666666663" width="118" height="34.333333333333343"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" image="play" catalog="system" title=" Play Now">
@@ -325,12 +371,15 @@
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4p-3A-8R2">
+                                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4p-3A-8R2">
                                                                         <rect key="frame" x="10" y="164.66666666666663" width="118" height="34.333333333333343"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" image="play" catalog="system" title=" Play Now">
                                                                             <color key="baseForegroundColor" name="AccentBlue"/>
                                                                         </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="playNowTapped:" destination="kiw-5J-En9" eventType="touchUpInside" id="zv4-4b-V94"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -550,6 +599,9 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="endColor">
                                                                         <color key="value" name="CardBackground"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="alpha">
+                                                                        <real key="value" value="0.40000000000000002"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
@@ -935,6 +987,14 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house.badge.exclamationmark" catalog="system" id="FWp-wf-vzM"/>
+                    <connections>
+                        <outlet property="balanceLabel" destination="wKp-T0-dGm" id="Fua-rt-CYB"/>
+                        <outlet property="bannerButton" destination="IGM-mw-r3i" id="QCm-h7-XyP"/>
+                        <outletCollection property="playNowButtons" destination="JIQ-RF-PE4" collectionClass="NSMutableArray" id="ySr-kc-Kxz"/>
+                        <outletCollection property="playNowButtons" destination="q4p-3A-8R2" collectionClass="NSMutableArray" id="27l-JM-YSI"/>
+                        <outletCollection property="playNowButtons" destination="GUD-8u-EJ0" collectionClass="NSMutableArray" id="ZIs-5T-uvn"/>
+                        <outletCollection property="playNowButtons" destination="LaL-MC-wnH" collectionClass="NSMutableArray" id="0gn-xP-wNg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nx9-5o-pOV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -943,7 +1003,7 @@
         <!--Games-->
         <scene sceneID="7xm-9v-xLj">
             <objects>
-                <viewController id="BvD-pY-Man" sceneMemberID="viewController">
+                <viewController id="BvD-pY-Man" customClass="GamesViewController" customModule="Casino" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a4h-L5-Nlb">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1060,12 +1120,15 @@
                                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJu-X7-vcD">
+                                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJu-X7-vcD">
                                                                         <rect key="frame" x="10" y="150.33333333333331" width="118" height="34.333333333333343"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" image="play" catalog="system" title=" Play Now">
                                                                             <color key="baseForegroundColor" name="AccentBlue"/>
                                                                         </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="playNowTapped:" destination="BvD-pY-Man" eventType="touchUpInside" id="AuA-du-0i0"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1152,12 +1215,15 @@
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYG-Wi-J3V">
+                                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYG-Wi-J3V">
                                                                         <rect key="frame" x="10" y="164.66666666666669" width="118" height="34.333333333333343"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain" image="play" catalog="system" title=" Play Now">
                                                                             <color key="baseForegroundColor" name="AccentBlue"/>
                                                                         </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="playNowTapped:" destination="BvD-pY-Man" eventType="touchUpInside" id="HKK-XM-QfT"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1255,6 +1321,9 @@
                                                                         <buttonConfiguration key="configuration" style="plain" image="play" catalog="system" title=" Play Now">
                                                                             <color key="baseForegroundColor" name="AccentBlue"/>
                                                                         </buttonConfiguration>
+                                                                        <connections>
+                                                                            <action selector="playNowTapped:" destination="BvD-pY-Man" eventType="touchUpInside" id="ywf-wE-bQf"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1377,6 +1446,9 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="endColor">
                                                                         <color key="value" name="CardBackground"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="alpha">
+                                                                        <real key="value" value="0.40000000000000002"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
@@ -1626,6 +1698,11 @@
                     <tabBarItem key="tabBarItem" title="Games" image="gamecontroller" catalog="system" id="Bdt-RU-Jbm">
                         <color key="badgeColor" name="AccentBlue"/>
                     </tabBarItem>
+                    <connections>
+                        <outletCollection property="playNowButtons" destination="IJu-X7-vcD" collectionClass="NSMutableArray" id="PJr-WD-Dja"/>
+                        <outletCollection property="playNowButtons" destination="bYG-Wi-J3V" collectionClass="NSMutableArray" id="mZH-On-duk"/>
+                        <outletCollection property="playNowButtons" destination="ZRQ-Wg-OVm" collectionClass="NSMutableArray" id="SOT-3z-SKJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wog-aF-48g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1634,7 +1711,7 @@
         <!--Wallet-->
         <scene sceneID="j6W-2E-r3O">
             <objects>
-                <viewController id="KT2-kR-bpJ" sceneMemberID="viewController">
+                <viewController id="KT2-kR-bpJ" customClass="WalletViewController" customModule="Casino" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9r4-2P-VRQ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1758,6 +1835,9 @@
                                                         </fragment>
                                                     </attributedString>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="addCreditsTapped:" destination="KT2-kR-bpJ" eventType="touchUpInside" id="GeH-Y5-LHO"/>
+                                                </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoinsign" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8Po-6R-8CJ">
                                                 <rect key="frame" x="132" y="56.333333333333329" width="40" height="40.666666666666671"/>
@@ -2041,6 +2121,10 @@
                     <tabBarItem key="tabBarItem" title="Wallet" image="wallet.bifold" catalog="system" id="zF3-Pm-736">
                         <color key="badgeColor" name="AccentBlue"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="balanceLabel" destination="nIS-cb-Gow" id="GcH-FW-CK4"/>
+                        <outlet property="transactionContainerStackView" destination="7QH-rk-yiZ" id="emx-d2-aUi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T43-MP-BMs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2049,7 +2133,7 @@
         <!--Profile-->
         <scene sceneID="2er-za-xcf">
             <objects>
-                <viewController id="aCH-U6-QlR" sceneMemberID="viewController">
+                <viewController id="aCH-U6-QlR" customClass="ProfileViewController" customModule="Casino" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NO8-BD-2nf">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2699,6 +2783,14 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.crop.circle" catalog="system" id="OBj-B6-fO2"/>
+                    <connections>
+                        <outlet property="avatarImageView" destination="bM5-1D-pjJ" id="jo8-2c-hw8"/>
+                        <outlet property="gamesPlayedLabel" destination="3Qy-Ee-4Z0" id="6qN-UM-YW7"/>
+                        <outlet property="levelLabel" destination="h4a-sL-aa9" id="pSp-1j-dKQ"/>
+                        <outlet property="nameLabel" destination="CfU-IW-mL7" id="M8t-jG-Ol8"/>
+                        <outlet property="winRateLabel" destination="JeP-TI-ZT7" id="ABp-JX-T1g"/>
+                        <outlet property="winsLabel" destination="yXf-Ah-nW8" id="oMq-lB-7c3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A7x-fE-CkQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
