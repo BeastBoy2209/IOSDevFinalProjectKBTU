@@ -10,16 +10,14 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    private var themeObserver: NSObjectProtocol?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         let tabBarAppearance = UITabBarAppearance()
-        tabBarAppearance.configureWithDefaultBackground() // Включает эффект блюра/стекла
-
-        // Убедись, что у тебя есть цвет "AppBackground" в Assets, или замени на .black
+        tabBarAppearance.configureWithDefaultBackground()
         tabBarAppearance.backgroundColor = UIColor(named: "AppBackground")?.withAlphaComponent(0.8) ?? .black.withAlphaComponent(0.8)
 
         // Убираем стандартную серую полоску-разделитель
@@ -34,10 +32,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Задаем цвета иконок и текста
         UITabBar.appearance().tintColor = UIColor(named: "AccentBlue") ?? .cyan // Активный цвет
         UITabBar.appearance().unselectedItemTintColor = .gray // Неактивный цвет
+
+        // Apply theme from shared state.
+        window?.overrideUserInterfaceStyle = UserManager.shared.currentTheme.interfaceStyle
+
+        // Keep theme synced across tabs/screens.
+        themeObserver = NotificationCenter.default.addObserver(
+            forName: UserManager.didUpdateNotification,
+            object: UserManager.shared,
+            queue: .main
+        ) { [weak self] notification in
+            guard let self else { return }
+            if notification.userInfo?[UserManager.NotificationKey.theme] != nil {
+                self.window?.overrideUserInterfaceStyle = UserManager.shared.currentTheme.interfaceStyle
+            }
+        }
+
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
+        if let themeObserver {
+            NotificationCenter.default.removeObserver(themeObserver)
+        }
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.
         // Release any resources associated with this scene that can be re-created the next time the scene connects.
@@ -67,4 +84,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 }
-
