@@ -7,7 +7,7 @@
 
 import UIKit
 
-// --- 1. РАСШИРЕНИЕ ДЛЯ НЕОНОВЫХ ЦВЕТОВ ---
+// --- 1. РАСШИРЕНИЕ ДЛЯ НЕОНОВЫХ ЦВЕТОВ -- JayLooo
 extension UIColor {
     static let neonBlue = UIColor(red: 0/255, green: 247/255, blue: 255/255, alpha: 1)
     static let neonRed = UIColor(red: 255/255, green: 50/255, blue: 120/255, alpha: 1)
