@@ -2966,7 +2966,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eIW-f9-BDN" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1546" y="-187"/>
+            <point key="canvasLocation" x="2100" y="-187"/>
         </scene>
         <!--BlackJackViewController-->
         <scene sceneID="Vma-nK-u7n">
@@ -3152,7 +3152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xrI-n9-rtd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1546" y="580"/>
+            <point key="canvasLocation" x="2100" y="580"/>
         </scene>
         <!--Aviator View Controller-->
         <scene sceneID="Num-3p-6z6">

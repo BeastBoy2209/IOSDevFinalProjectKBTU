@@ -65,6 +65,16 @@ class RouletteViewController: UIViewController {
         rouletteCollection.delegate = self
         setupChips()
         setupBettingTable()
+        
+        // Подписываемся на изменения баланса
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleUserManagerUpdate(_:)),
+            name: UserManager.didUpdateNotification,
+            object: UserManager.shared
+        )
+        
+        // Обновляем баланс
         updateBalance()
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -73,6 +83,16 @@ class RouletteViewController: UIViewController {
         DispatchQueue.main.async {
             self.scrollToIndex(self.currentIndex, animated: false)
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Обновляем баланс каждый раз при появлении экрана
+        updateBalance()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     // --- 5. СОЗДАНИЕ КНОПКИ ВЫХОДА ---
@@ -422,7 +442,7 @@ class RouletteViewController: UIViewController {
         }
         
         if didWin {
-            // Добавляем выигрыш к балансу
+            // Добавляем выигрыш к балансу через UserManager
             UserManager.shared.recordGameResult(gameName: "Roulette", didWin: true, delta: prize)
             resultLabel.text = "WIN! \(result) (+\(prize)$)"
             resultLabel.textColor = .neonGreen
@@ -432,6 +452,9 @@ class RouletteViewController: UIViewController {
             resultLabel.text = "Lost. Result: \(result)"
             resultLabel.textColor = .neonRed
         }
+        
+        // Принудительно обновляем баланс на экране
+        updateBalance()
     }
     
     func scrollToIndex(_ idx: Int, animated: Bool) {
@@ -439,11 +462,19 @@ class RouletteViewController: UIViewController {
     }
     
     func updateBalance() {
-        balanceLabel.text = "BALANCE: \(UserManager.shared.balance)$"
+        let currentBalance = UserManager.shared.balance
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        let formattedBalance = formatter.string(from: NSNumber(value: currentBalance)) ?? "\(currentBalance)"
+        balanceLabel.text = "BALANCE: \(formattedBalance)$"
+        print("🎰 Balance updated in Roulette: \(currentBalance)$")
     }
     
     @objc func handleUserManagerUpdate(_ notification: Notification) {
-        updateBalance()
+        // Обновляем баланс в главном потоке
+        DispatchQueue.main.async {
+            self.updateBalance()
+        }
     }
     
     @objc func dismissKeyboard() {
