@@ -383,6 +383,7 @@
                                                                         </buttonConfiguration>
                                                                         <connections>
                                                                             <action selector="playNowTapped:" destination="kiw-5J-En9" eventType="touchUpInside" id="zv4-4b-V94"/>
+                                                                            <segue destination="Feq-t4-XJA" kind="presentation" id="Wco-gi-ow3"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -1231,6 +1232,7 @@
                                                                         </buttonConfiguration>
                                                                         <connections>
                                                                             <action selector="playNowTapped:" destination="BvD-pY-Man" eventType="touchUpInside" id="HKK-XM-QfT"/>
+                                                                            <segue destination="Feq-t4-XJA" kind="presentation" id="nYW-OJ-6R5"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -3152,10 +3154,209 @@
             </objects>
             <point key="canvasLocation" x="1546" y="580"/>
         </scene>
+        <!--Aviator View Controller-->
+        <scene sceneID="Num-3p-6z6">
+            <objects>
+                <viewController id="Feq-t4-XJA" customClass="AviatorViewController" customModule="Casino" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Yh-ff-mJ9">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="793"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Wallet: 1000$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfo-W4-66r">
+                                <rect key="frame" x="20" y="79" width="353" height="23"/>
+                                <color key="backgroundColor" name="CardBackground"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" name="AccentBlue"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.00x" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2f-jD-EIu">
+                                <rect key="frame" x="20" y="122" width="353" height="86"/>
+                                <color key="backgroundColor" name="CardBackground"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <color key="textColor" name="AccentBlue"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nv0-1y-IQ4">
+                                <rect key="frame" x="20" y="240" width="353" height="187"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="aviator" translatesAutoresizingMaskIntoConstraints="NO" id="TZu-1i-pfA">
+                                        <rect key="frame" x="0.0" y="129" width="64" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="fEN-ro-kEw">
+                                <rect key="frame" x="20" y="456.00000000000006" width="353" height="195.66666666666669"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aIY-w9-Yav">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="34"/>
+                                        <color key="textColor" name="CardBackground"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZvF-ib-zVx">
+                                        <rect key="frame" x="0.0" y="49" width="353" height="28"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick Bets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1LH-nb-liz">
+                                                <rect key="frame" x="0.0" y="0.0" width="292" height="28"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" name="AccentBlue"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="duO-ux-pem">
+                                                <rect key="frame" x="292" y="0.0" width="63" height="28"/>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DSd-Rq-rum">
+                                        <rect key="frame" x="0.0" y="92" width="353" height="34.333333333333343"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAr-kY-FzV">
+                                                <rect key="frame" x="0.0" y="0.0" width="111" height="34.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="100">
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="backgroundColor" name="IconBackground"/>
+                                                        <color key="strokeColor" name="AppBackground"/>
+                                                    </backgroundConfiguration>
+                                                    <color key="baseForegroundColor" name="AccentBlue"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="presetButtonTapped:" destination="Feq-t4-XJA" eventType="touchUpInside" id="y2r-Mm-FUA"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNQ-xQ-CRn">
+                                                <rect key="frame" x="121" y="0.0" width="111" height="34.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="200">
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="backgroundColor" name="IconBackground"/>
+                                                    </backgroundConfiguration>
+                                                    <color key="baseForegroundColor" name="AccentBlue"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="presetButtonTapped:" destination="Feq-t4-XJA" eventType="touchUpInside" id="Keg-ah-O7C"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqh-Xw-sNK">
+                                                <rect key="frame" x="242" y="0.0" width="111" height="34.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="300">
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="backgroundColor" name="IconBackground"/>
+                                                    </backgroundConfiguration>
+                                                    <color key="baseForegroundColor" name="AccentBlue"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="presetButtonTapped:" destination="Feq-t4-XJA" eventType="touchUpInside" id="nwQ-Jo-aYA"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PrP-oU-Vgh">
+                                        <rect key="frame" x="0.0" y="141.33333333333337" width="353" height="54.333333333333343"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Multiplier: x1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOG-eK-tge">
+                                                <rect key="frame" x="0.0" y="0.0" width="353" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" name="AccentBlue"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ner-OK-wms">
+                                                <rect key="frame" x="0.0" y="20.333333333333258" width="353" height="34"/>
+                                                <color key="minimumTrackTintColor" name="AccentBlue"/>
+                                                <connections>
+                                                    <action selector="sliderValueChanged:" destination="Feq-t4-XJA" eventType="valueChanged" id="bRE-SG-p3g"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEY-TB-9A5">
+                                <rect key="frame" x="20" y="671.66666666666663" width="353" height="34.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="START">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" name="AppBackground"/>
+                                        <color key="strokeColor" name="AppBackground"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" name="AccentBlue"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="actionButtonTapped:" destination="Feq-t4-XJA" eventType="touchUpInside" id="DK7-vK-Aop"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Fum-VN-3j4">
+                                <rect key="frame" x="0.0" y="714" width="393" height="180"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="I3t-O7-wUO"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HistoryCell" id="7Sk-En-LUK" customClass="HistoryCell" customModule="Aviator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="51"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7Sk-En-LUK" id="1rw-gZ-7uy" customClass="HistoryCell" customModule="Aviator" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="51"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uyL-Hs-Te0"/>
+                        <color key="backgroundColor" name="AppBackground"/>
+                        <constraints>
+                            <constraint firstItem="Fum-VN-3j4" firstAttribute="top" secondItem="jEY-TB-9A5" secondAttribute="bottom" constant="8" symbolic="YES" id="1vN-ns-jB1"/>
+                            <constraint firstItem="nv0-1y-IQ4" firstAttribute="top" secondItem="6Yh-ff-mJ9" secondAttribute="top" constant="240" id="4rS-we-QfY"/>
+                            <constraint firstItem="jEY-TB-9A5" firstAttribute="leading" secondItem="uyL-Hs-Te0" secondAttribute="leading" constant="20" id="5Sc-a1-W5y"/>
+                            <constraint firstItem="fEN-ro-kEw" firstAttribute="leading" secondItem="uyL-Hs-Te0" secondAttribute="leading" constant="20" id="5pg-kP-jtF"/>
+                            <constraint firstItem="nv0-1y-IQ4" firstAttribute="leading" secondItem="uyL-Hs-Te0" secondAttribute="leading" constant="20" id="HHo-fp-abR"/>
+                            <constraint firstItem="bfo-W4-66r" firstAttribute="leading" secondItem="uyL-Hs-Te0" secondAttribute="leading" constant="20" id="ImV-8j-aYU"/>
+                            <constraint firstItem="j2f-jD-EIu" firstAttribute="leading" secondItem="uyL-Hs-Te0" secondAttribute="leading" constant="20" id="SvC-YG-2V3"/>
+                            <constraint firstItem="fEN-ro-kEw" firstAttribute="top" secondItem="6Yh-ff-mJ9" secondAttribute="top" constant="455.99999999999994" id="WBv-38-uPY"/>
+                            <constraint firstItem="uyL-Hs-Te0" firstAttribute="trailing" secondItem="j2f-jD-EIu" secondAttribute="trailing" constant="20" id="WZJ-2e-935"/>
+                            <constraint firstItem="jEY-TB-9A5" firstAttribute="top" secondItem="fEN-ro-kEw" secondAttribute="bottom" constant="20" id="dkR-iq-Kfp"/>
+                            <constraint firstItem="uyL-Hs-Te0" firstAttribute="trailing" secondItem="fEN-ro-kEw" secondAttribute="trailing" constant="20" id="fn4-O6-3MY"/>
+                            <constraint firstItem="uyL-Hs-Te0" firstAttribute="trailing" secondItem="Fum-VN-3j4" secondAttribute="trailing" id="hfC-vK-dVe"/>
+                            <constraint firstItem="nv0-1y-IQ4" firstAttribute="top" secondItem="j2f-jD-EIu" secondAttribute="bottom" constant="32" id="kiM-Ln-zPM"/>
+                            <constraint firstItem="uyL-Hs-Te0" firstAttribute="trailing" secondItem="nv0-1y-IQ4" secondAttribute="trailing" constant="20" id="kiq-XC-VqT"/>
+                            <constraint firstItem="Fum-VN-3j4" firstAttribute="leading" secondItem="uyL-Hs-Te0" secondAttribute="leading" id="q3V-8D-Gx2"/>
+                            <constraint firstItem="bfo-W4-66r" firstAttribute="top" secondItem="uyL-Hs-Te0" secondAttribute="top" constant="20" id="q3x-Ka-loV"/>
+                            <constraint firstItem="uyL-Hs-Te0" firstAttribute="trailing" secondItem="jEY-TB-9A5" secondAttribute="trailing" constant="20" id="rlI-WQ-AaE"/>
+                            <constraint firstItem="j2f-jD-EIu" firstAttribute="top" secondItem="bfo-W4-66r" secondAttribute="bottom" constant="20" id="vSB-bS-mXp"/>
+                            <constraint firstItem="uyL-Hs-Te0" firstAttribute="trailing" secondItem="bfo-W4-66r" secondAttribute="trailing" constant="20" id="yDh-73-bU5"/>
+                            <constraint firstItem="fEN-ro-kEw" firstAttribute="top" secondItem="nv0-1y-IQ4" secondAttribute="bottom" constant="29" id="zUl-GY-MMm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="actionButton" destination="jEY-TB-9A5" id="jcs-dk-9C1"/>
+                        <outlet property="balanceLabel" destination="bfo-W4-66r" id="eyl-t0-SEa"/>
+                        <outlet property="betSlider" destination="Ner-OK-wms" id="fky-ut-XHm"/>
+                        <outlet property="betTextField" destination="aIY-w9-Yav" id="m9x-x5-gSs"/>
+                        <outlet property="gameContainer" destination="nv0-1y-IQ4" id="OcI-XP-r65"/>
+                        <outlet property="historyTableView" destination="Fum-VN-3j4" id="6uJ-Bc-aVN"/>
+                        <outlet property="multiplierLabel" destination="j2f-jD-EIu" id="0gY-rH-t7e"/>
+                        <outlet property="planeImageView" destination="TZu-1i-pfA" id="n1D-xq-MSS"/>
+                        <outlet property="quickBetSwitch" destination="duO-ux-pem" id="6MC-Ck-3Nb"/>
+                        <outlet property="sliderValueLabel" destination="dOG-eK-tge" id="QaX-fp-H7H"/>
+                        <outletCollection property="presetButtons" destination="SAr-kY-FzV" collectionClass="NSMutableArray" id="wqK-8w-r3l"/>
+                        <outletCollection property="presetButtons" destination="aNQ-xQ-CRn" collectionClass="NSMutableArray" id="7ax-33-MwO"/>
+                        <outletCollection property="presetButtons" destination="iqh-Xw-sNK" collectionClass="NSMutableArray" id="v8O-9O-0XI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EQ0-3r-Jto" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2398" y="356"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="iH6-OY-Ktj"/>
-        <segue reference="NTm-A1-xiC"/>
+        <segue reference="nYW-OJ-6R5"/>
+        <segue reference="Xir-41-IWK"/>
+        <segue reference="MDd-Py-bfc"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AppIcon" width="1024" height="1024"/>
@@ -3168,6 +3369,7 @@
         <image name="app.gift.fill" catalog="system" width="128" height="114"/>
         <image name="arrow.up.forward" catalog="system" width="128" height="110"/>
         <image name="arrow.up.right" catalog="system" width="128" height="110"/>
+        <image name="aviator" width="1024" height="1024"/>
         <image name="bell" catalog="system" width="125" height="128"/>
         <image name="bitcoinsign" catalog="system" width="87" height="128"/>
         <image name="clock" catalog="system" width="128" height="123"/>
